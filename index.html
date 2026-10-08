@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание и Онлайн Таблица</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 15px; color: #333; }
+        .container { max-width: 900px; margin: auto; }
+        
+        /* Квадратик для отображения живой Google Таблицы */
+        .compact-today { 
+            background: #fff; 
+            padding: 15px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            margin-bottom: 20px; 
+            border-top: 4px solid #ff9800; 
+        }
+        .compact-today h2 { margin: 0 0 12px 0; color: #e65100; font-size: 18px; }
+        
+        /* Настройки окна таблицы */
+        .sheet-frame {
+            width: 100%;
+            height: 350px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        /* Полная таблица снизу */
+        .full-schedule { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .full-schedule h2 { margin-top: 0; color: #2c3e50; font-size: 20px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #e0e0e0; padding: 10px 8px; text-align: center; font-size: 14px; }
+        th { background: #0056b3; color: white; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fbfd; }
+        .empty { color: #ccc; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- СВЕРХУ: Тот самый первый рабочий квадратик -->
+    <div class="compact-today">
+        <h2>📊 Живая таблица (Обновления и ДЗ):</h2>
+        <iframe class="sheet-frame" src="https://docs.google.com/spreadsheets/d/1VFthWB-bgUyl7lzre_sQ94zpS52wzSgie-EEdtt24Wo/edit?usp=drivesdk"></iframe>
+    </div>
+
+    <!-- СНИЗУ: Основное расписание уроков -->
+    <div class="full-schedule">
+        <h2>📅 Основное расписание</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Пн</th>
+                        <th>Вт</th>
+                        <th>Ср</th>
+                        <th>Чт</th>
+                        <th>Пт</th>
+                        <th>Сб</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>1</b></td><td>Ров</td><td>Матем</td><td>Матем</td><td>Биология</td><td>Рмг</td><td>Русский</td></tr>
+                    <tr><td><b>2</b></td><td>Труд</td><td>Матем</td><td>Биология</td><td>Музыка</td><td>Истор</td><td>Мхк</td></tr>
+                    <tr><td><b>3</b></td><td>Труд</td><td>Английский</td><td>Русский</td><td>Истор</td><td>Русский</td><td>Физра</td></tr>
+                    <tr><td><b>4</b></td><td>Русский</td><td>Инф</td><td>Английский</td><td>Матем</td><td>Матем</td><td class="empty">—</td></tr>
+                    <tr><td><b>5</b></td><td>Физика</td><td>Фин гр</td><td>Физика</td><td>Матем</td><td>Геогр</td><td class="empty">—</td></tr>
+                    <tr><td><b>6</b></td><td>География</td><td>Физра</td><td>Русский</td><td>ИЗО</td><td>Матем</td><td class="empty">—</td></tr>
+                    <tr><td><b>7</b></td><td>Русский</td><td class="empty">—</td><td>Литер</td><td>Физра</td><td>Английский</td><td class="empty">—</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
